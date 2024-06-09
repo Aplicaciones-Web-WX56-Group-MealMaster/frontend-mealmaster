@@ -15,8 +15,8 @@
     "axios": "^1.7.2",
     "json-server": "^1.0.0-beta.1",
     "primeicons": "^7.0.0",
-    "primevue": "^3.12.2",
-    "vue": "^3.4.21"
+    "primevue": "^3.28.0",
+    "vue": "^3.4.21",
     "primeflex": "^3.3.1",
     "vue-router": "^4.3.2"
   },

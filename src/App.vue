@@ -6,7 +6,7 @@ import Navbar from "./meal-master/shared/components/navbar.component.vue";
 </script>
 
 <template>
-  <login-page />
+  <ingredients-page />
 
 </template>
 
