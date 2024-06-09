@@ -4,9 +4,9 @@ import { ref } from 'vue';
 // Define your tags
 const foodTypes = ref(['Breakfast', 'Lunch', 'Dinner', 'Snack']);
 const difficulties = ref(['Easy', 'Intermediate', 'Hard']);
-const cookingtimes = ref(['15 minutes', '30 minutes', 'Above an hour']);
-const cuisineTypes = ref(['Peruvian', 'American', 'French', 'Chinese', 'Italian', 'Indian', 'Mexican', 'Thai', 'Japanese']);
-const pricing = ref(['$', '$$', '$$$']);
+const cookingtimes = ref(['15 minutes or less', '30 minutes or less', 'Above an hour']);
+const cuisineTypes = ref(['Peruvian', 'American', 'French', 'Chinese', 'Italian', 'Indian', 'Mexican', 'Thai', 'Continental']);
+const pricing = ref(['Cheap', 'Affordable', 'Expensive']);
 
 // Track which tags are selected
 const selectedFoodType = ref(null);

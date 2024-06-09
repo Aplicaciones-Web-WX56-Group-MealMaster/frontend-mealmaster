@@ -5,14 +5,16 @@
       <div class="meal-info">
         <h2>{{ recipe.name }}</h2>
         <div class="meal-tags">
-          <span  class="meal-tag" :class="getTagColor(recipe.mealtime)">{{ recipe.mealtime }}</span>
-          <span  class="meal-tag" :class="getTagColor(recipe.pricing)">{{ recipe.pricing }}</span>
-          <span  class="meal-tag" :class="getTagColor(recipe.difficulty)">{{ recipe.difficulty }}</span>
-          <span  class="meal-tag" :class="getTagColor(recipe.cooking_time)">{{ recipe.cooking_time }}</span>
-          <span  class="meal-tag" :class="getTagColor(recipe.type_cuisine)">{{ recipe.type_cuisine }}</span>
+          <span  class="meal-tag" :class="getTagColor(recipe.mealtime, 'mealtime' )">{{ recipe.mealtime }}</span>
+          <span  class="meal-tag" :class="getTagColor(recipe.pricing, 'pricing')">{{ recipe.pricing }}</span>
+          <span  class="meal-tag" :class="getTagColor(recipe.difficulty, 'difficulty')">{{ recipe.difficulty }}</span>
+          <span  class="meal-tag" :class="getTagColor(recipe.cooking_time, 'cooking_time')">{{ recipe.cooking_time }}</span>
+          <span  class="meal-tag" :class="getTagColor(recipe.type_cuisine, 'type_cuisine')">{{ recipe.type_cuisine }}</span>
         </div>
-        <Button class="info-button" @click="seeMoreInfo(recipe)" icon="pi pi-info">More info</Button>
-        <Button class="add-button" @click="addMeal(recipe)" icon="pi pi-plus"></Button>
+        <div style="display:flex">
+          <pv-button class="info-button" @click="seeMoreInfo(recipe)" icon="pi pi-info">More info</pv-button>
+          <pv-button class="add-button" @click="addMeal(recipe)" icon="pi pi-plus"></pv-button>
+        </div>
       </div>
     </div>
   </div>
@@ -22,7 +24,6 @@
 import { ref } from 'vue';
 import {fetchRecipes} from "../services/recipe-data.service.js";
 import Recipe from "../models/recipe.js";
-import Button from 'primevue/button'
 
 export default {
   data() {
@@ -44,15 +45,15 @@ export default {
     seeMoreInfo(recipe) {
       // Show more info about the meal
     },
-    getTagColor(tag) {
-      if (['$$$', 'Hard', 'Above an hour'].includes(tag)) {
+    getTagColor(tag, tag_name) {
+      if (['Expensive', 'Hard', 'Above an hour'].includes(tag)) {
         return 'tag-red';
-      } else if (['$$', 'Intermediate', '30 minutes'].includes(tag)) {
+      } else if (['Affordable', 'Intermediate', '30 minutes'].includes(tag)) {
         return 'tag-orange';
-      } else if (['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Peruvian', 'American', 'French', 'Chinese', 'Italian', 'Indian', 'Mexican', 'Thai', 'Japanese'].includes(tag)) {
-        return 'tag-green';
-      } else {
+      } else if (tag_name === 'type_cuisine' || tag_name === 'mealtime') {
         return 'tag-gray';
+      } else {
+        return 'tag-green';
       }
     }
   }
@@ -120,9 +121,22 @@ export default {
 }
 
 .add-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 50px; /* Adjust the horizontal padding */
+  display: flex; /* Add this */
+  justify-content: center; /* Add this */
+  align-items: center; /* Add this */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 1vh; /* Set a specific width */
+  box-sizing: border-box; /* Ensure padding doesn't affect the final width */
 }
 
 .meal-tag {
