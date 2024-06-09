@@ -80,18 +80,183 @@
     "ingredients": [
         {
             "ingredient_id": 1,
-            "name": "Chicken Breast",
-            "image": "chicken_breast.jpg"
+            "name": "Chicken",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/chicken.png?raw=true",
+            "type": "Protein"
         },
         {
             "ingredient_id": 2,
             "name": "Lettuce",
-            "image": "lettuce.jpg"
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/lettuce.png?raw=true",
+            "type": "Vegetable"
         },
         {
             "ingredient_id": 3,
             "name": "Oats",
-            "image": "oats.jpg"
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/oats.png?raw=true",
+            "type": "Grain"
+        },
+        {
+            "ingredient_id": 4,
+            "name": "Tomato",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/tomato.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 5,
+            "name": "Olive Oil",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/olive-oil.png?raw=true",
+            "type": "Oil"
+        },
+        {
+            "ingredient_id": 6,
+            "name": "Salmon",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/salmon.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 7,
+            "name": "Spinach",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/spinach.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 8,
+            "name": "Quinoa",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/quinoa.png?raw=true",
+            "type": "Grain"
+        },
+        {
+            "ingredient_id": 9,
+            "name": "Almonds",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/almonds.png?raw=true",
+            "type": "Nut"
+        },
+        {
+            "ingredient_id": 10,
+            "name": "Greek Yogurt",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/greek-yogurt.png?raw=true",
+            "type": "Dairy"
+        },
+        {
+            "ingredient_id": 11,
+            "name": "Avocado",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/avocado.png?raw=true",
+            "type": "Fruit"
+        },
+        {
+            "ingredient_id": 12,
+            "name": "Broccoli",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/boccoli.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 13,
+            "name": "Brown Rice",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/brown-rice.png?raw=true",
+            "type": "Grain"
+        },
+        {
+            "ingredient_id": 14,
+            "name": "Eggs",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/eggs.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 15,
+            "name": "Garlic",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/garlic.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 16,
+            "name": "Lemon",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/lemon.png?raw=true",
+            "type": "Fruit"
+        },
+        {
+            "ingredient_id": 17,
+            "name": "Mushrooms",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/mushrooms.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 18,
+            "name": "Onion",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/onion.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 19,
+            "name": "Peanut Butter",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/peanut-butter.png?raw=true",
+            "type": "Nut Butter"
+        },
+        {
+            "ingredient_id": 20,
+            "name": "Peas",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/peas.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 21,
+            "name": "Pork",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/pork.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 22,
+            "name": "Raspberries",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/raspberries.png?raw=true",
+            "type": "Fruit"
+        },
+        {
+            "ingredient_id": 23,
+            "name": "Red Bell Pepper",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/red-bell-pepper.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 24,
+            "name": "Shrimp",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/shrimp.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 25,
+            "name": "Sweet Potato",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/sweet-potato.png?raw=true",
+            "type": "Vegetable"
+        },
+        {
+            "ingredient_id": 26,
+            "name": "Tofu",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/tofu.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 27,
+            "name": "Tuna",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/tuna.png?raw=true",
+            "type": "Protein"
+        },
+        {
+            "ingredient_id": 28,
+            "name": "Walnuts",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/walnuts.png?raw=true",
+            "type": "Nut"
+        },
+        {
+            "ingredient_id": 29,
+            "name": "Whole Wheat Bread",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/whole-wheat-bread.png?raw=true",
+            "type": "Grain"
+        },
+        {
+            "ingredient_id": 30,
+            "name": "Zucchini",
+            "image": "https://github.com/Aplicaciones-Web-WX56-Group-MealMaster/ingredients-images/blob/main/ingredients-images/zucchini.png?raw=true",
+            "type": "Vegetable"
         }
     ],
     "mealplan_recipes": [
