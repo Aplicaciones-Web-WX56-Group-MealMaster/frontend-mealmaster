@@ -1,6 +1,6 @@
 export default class Recipe {
     constructor(data) {
-        this.id = data.id;
+        this.id = data.recipe_id;
         this.name = data.name;
         this.instructions = data.instructions;
         this.image = data.image;
