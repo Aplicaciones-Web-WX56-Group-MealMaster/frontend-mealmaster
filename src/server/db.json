@@ -1,0 +1,125 @@
+{
+    "users": [
+        {
+            "user_id": 1,
+            "email": "john.doe@example.com",
+            "password": "hashedpassword123",
+            "full_name": "John Doe"
+        },
+        {
+            "user_id": 2,
+            "email": "jane.smith@example.com",
+            "password": "hashedpassword456",
+            "full_name": "Jane Smith"
+        }
+    ],
+    "subscriptions": [
+        {
+            "subscription_id": 1,
+            "type": "premium",
+            "start_date": "2024-01-01",
+            "end_date": "2024-12-31",
+            "user_id": 1
+        },
+        {
+            "subscription_id": 2,
+            "type": "basic",
+            "start_date": "2024-02-01",
+            "end_date": "2024-08-01",
+            "user_id": 2
+        }
+    ],
+    "meal_plans": [
+        {
+            "mealplan_id": 1,
+            "plan_name": "Weight Loss Plan",
+            "start_date": "2024-01-01",
+            "end_date": "2024-03-01",
+            "user_id": 1
+        },
+        {
+            "mealplan_id": 2,
+            "plan_name": "Muscle Gain Plan",
+            "start_date": "2024-02-01",
+            "end_date": "2024-04-01",
+            "user_id": 2
+        }
+    ],
+    "recipes": [
+        {
+            "recipe_id": 1,
+            "name": "Grilled Chicken Salad",
+            "instructions": "Grill chicken. Mix with salad ingredients. Serve.",
+            "image": "grilled_chicken_salad.jpg",
+            "mealtime": "Lunch",
+            "pricing": "Affordable",
+            "difficulty": "Easy",
+            "cooking_time": "30 minutes",
+            "type_cuisine": "American",
+            "calories": 350,
+            "proteins": 30,
+            "fats": 10,
+            "carbohydrates": 40
+        },
+        {
+            "recipe_id": 2,
+            "name": "Oatmeal Breakfast",
+            "instructions": "Cook oats. Add fruits and nuts. Serve.",
+            "image": "oatmeal_breakfast.jpg",
+            "mealtime": "Breakfast",
+            "pricing": "Cheap",
+            "difficulty": "Very Easy",
+            "cooking_time": "10 minutes",
+            "type_cuisine": "Continental",
+            "calories": 150,
+            "proteins": 5,
+            "fats": 2,
+            "carbohydrates": 30
+        }
+    ],
+    "ingredients": [
+        {
+            "ingredient_id": 1,
+            "name": "Chicken Breast",
+            "image": "chicken_breast.jpg"
+        },
+        {
+            "ingredient_id": 2,
+            "name": "Lettuce",
+            "image": "lettuce.jpg"
+        },
+        {
+            "ingredient_id": 3,
+            "name": "Oats",
+            "image": "oats.jpg"
+        }
+    ],
+    "mealplan_recipes": [
+        {
+            "mealplan_id": 1,
+            "recipe_id": 1
+        },
+        {
+            "mealplan_id": 1,
+            "recipe_id": 2
+        },
+        {
+            "mealplan_id": 2,
+            "recipe_id": 1
+        }
+    ],
+    "recipe_ingredients": [
+        {
+            "recipe_id": 1,
+            "ingredient_id": 1
+        },
+        {
+            "recipe_id": 1,
+            "ingredient_id": 2
+        },
+        {
+            "recipe_id": 2,
+            "ingredient_id": 3
+        }
+    ]
+}
