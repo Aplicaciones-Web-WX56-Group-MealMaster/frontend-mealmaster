@@ -1,150 +1,131 @@
 <template>
-  <div class="meal-card-container">
-    <div v-for="recipe in filteredRecipes" :key="recipe.id" class="meal-card">
-      <div class="meal-image-container">
-        <img :src="recipe.image" alt="Meal" class="meal-image" />
-      </div>
+  <div class="meal-card" :class="{ 'selected': isSelected }">
+    <div class="meal-card-content">
+      <img :src="recipe.image" :alt="recipe.name" class="meal-image" />
       <div class="meal-info">
-        <h2 class="meal-name">{{ recipe.name }}</h2>
+        <h3 class="meal-name">{{ recipe.name }}</h3>
         <div class="meal-tags">
-          <span class="meal-tag" :class="getTagColor(recipe.mealtime, 'mealtime')">{{ recipe.mealtime }}</span>
-          <span class="meal-tag" :class="getTagColor(recipe.pricing, 'pricing')">{{ recipe.pricing }}</span>
-          <span class="meal-tag" :class="getTagColor(recipe.difficulty, 'difficulty')">{{ recipe.difficulty }}</span>
-          <span class="meal-tag" :class="getTagColor(recipe.cooking_time, 'cooking_time')">{{ recipe.cooking_time }}</span>
-          <span class="meal-tag" :class="getTagColor(recipe.type_cuisine, 'type_cuisine')">{{ recipe.type_cuisine }}</span>
+          <span class="meal-tag" :class="getTagColor(recipe.mealtime)">{{ recipe.mealtime }}</span>
+          <span class="meal-tag" :class="getTagColor(recipe.pricing)">{{ recipe.pricing }}</span>
+          <span class="meal-tag" :class="getTagColor(recipe.difficulty)">{{ recipe.difficulty }}</span>
+          <span class="meal-tag" :class="getTagColor(recipe.type_cuisine)">{{ recipe.type_cuisine }}</span>
         </div>
         <p class="meal-description">{{ recipe.description }}</p>
-        <div class="meal-actions">
-          <button class="info-button" @click="showRecipeInfo(recipe)">More Info</button>
-          <button class="add-button" @click="addRecipe(recipe)">Add to Selected</button>
-        </div>
       </div>
+    </div>
+    <div class="meal-actions">
+      <Button
+          :label="isSelected ? 'Deselect' : 'Select'"
+          :class="['p-button-outlined', { 'p-button-secondary': !isSelected, 'p-button-success': isSelected }]"
+          @click="$emit('toggle-selection', recipe)"
+      />
+      <Button label="More Info" class="p-button-text" @click="$emit('show-recipe-info', recipe)" />
     </div>
   </div>
 </template>
 
 <script>
+import Button from 'primevue/button';
+
 export default {
+  components: {
+    Button
+  },
   props: {
-    filteredRecipes: {
-      type: Array,
-      required: true,
+    recipe: {
+      type: Object,
+      required: true
     },
+    isSelected: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
-    addRecipe(recipe) {
-      this.$emit('add-recipe', recipe);
-    },
-    showRecipeInfo(recipe) {
-      this.$emit('show-recipe-info', recipe);
-    },
-    getTagColor(tag, tagName) {
-      if (['Expensive', 'Hard', 'Above 1 hour'].includes(tag)) {
-        return 'tag-red';
-      } else if (['Affordable', 'Intermediate', '30 minutes or less'].includes(tag)) {
-        return 'tag-orange';
-      } else if (tagName === 'type_cuisine' || tagName === 'mealtime') {
-        return 'tag-gray';
-      } else {
-        return 'tag-green';
-      }
-    },
-  },
+    getTagColor(tag) {
+      // Implement your tag color logic here
+      const colors = {
+        'Breakfast': 'tag-blue',
+        'Lunch': 'tag-green',
+        'Dinner': 'tag-orange',
+        'Snack': 'tag-purple',
+        'Cheap': 'tag-green',
+        'Affordable': 'tag-blue',
+        'Expensive': 'tag-red',
+        'Easy': 'tag-green',
+        'Intermediate': 'tag-orange',
+        'Hard': 'tag-red'
+      };
+      return colors[tag] || 'tag-default';
+    }
+  }
 };
 </script>
 
-<style scoped>
-.meal-card-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
 
+<style scoped>
 .meal-card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.meal-image-container {
-  height: 200px;
-  overflow: hidden;
+.meal-card.selected {
+  box-shadow: 0 0 0 2px #4caf50, 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-card-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .meal-image {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
 .meal-info {
-  padding: 20px;
+  padding: 1rem;
+  flex-grow: 1;
 }
 
 .meal-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .meal-tags {
-  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .meal-tag {
-  display: inline-block;
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  color: #fff;
-  margin-right: 5px;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
-.tag-red {
-  background-color: #ff6b6b;
-}
-
-.tag-orange {
-  background-color: #ffa94d;
-}
-
-.tag-green {
-  background-color: #4ecdc4;
-}
-
-.tag-gray {
-  background-color: #a8a8a8;
-}
+.tag-blue { background-color: #e3f2fd; color: #1565c0; }
+.tag-green { background-color: #e8f5e9; color: #2e7d32; }
+.tag-orange { background-color: #fff3e0; color: #ef6c00; }
+.tag-purple { background-color: #f3e5f5; color: #6a1b9a; }
+.tag-red { background-color: #ffebee; color: #c62828; }
+.tag-default { background-color: #f5f5f5; color: #616161; }
 
 .meal-description {
-  margin-bottom: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .meal-actions {
   display: flex;
   justify-content: space-between;
-}
-
-.info-button {
-  padding: 8px 16px;
-  background-color: #4ecdc4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.add-button {
-  padding: 8px 16px;
-  background-color: #fff;
-  color: #4ecdc4;
-  border: 1px solid #4ecdc4;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
 </style>

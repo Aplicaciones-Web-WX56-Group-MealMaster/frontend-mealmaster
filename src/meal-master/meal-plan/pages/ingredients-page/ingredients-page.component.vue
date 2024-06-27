@@ -1,6 +1,5 @@
 <template>
   <div class="ingredients-page">
-    <toolbar />
     <div class="container">
       <h1>Ingredients</h1>
       <div class="search-bar">

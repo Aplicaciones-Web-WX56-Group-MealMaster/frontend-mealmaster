@@ -23,13 +23,6 @@
       </div>
     </div>
     <div class="filter-section">
-      <h3 class="filter-title">Cooking Time</h3>
-      <div v-for="(tag, index) in cookingtimes" :key="index" class="tag" @click="toggleCookingTime(tag)">
-        <div class="tag-checkbox" :class="{ 'tag-checkbox-selected': selectedCookingTimes.includes(tag) }"></div>
-        <span class="tag-label">{{ tag }}</span>
-      </div>
-    </div>
-    <div class="filter-section">
       <h3 class="filter-title">Type of Cuisine</h3>
       <div v-for="(tag, index) in cuisineTypes" :key="index" class="tag" @click="toggleCuisineType(tag)">
         <div class="tag-checkbox" :class="{ 'tag-checkbox-selected': selectedCuisineTypes.includes(tag) }"></div>
@@ -45,12 +38,10 @@ export default {
     return {
       foodTypes: ['Breakfast', 'Lunch', 'Dinner', 'Snack'],
       difficulties: ['Easy', 'Intermediate', 'Hard'],
-      cookingtimes: ['15 minutes or less', '30 minutes or less', 'Above 1 hour'],
       cuisineTypes: ['Peruvian', 'American', 'French', 'Chinese', 'Italian', 'Indian', 'Mexican', 'Thai', 'Continental'],
       pricing: ['Cheap', 'Affordable', 'Expensive'],
       selectedFoodTypes: [],
       selectedDifficulties: [],
-      selectedCookingTimes: [],
       selectedCuisineTypes: [],
       selectedPricing: [],
     };
@@ -64,9 +55,6 @@ export default {
     },
     toggleDifficulty(tag) {
       this.toggleTag(tag, this.selectedDifficulties);
-    },
-    toggleCookingTime(tag) {
-      this.toggleTag(tag, this.selectedCookingTimes);
     },
     toggleCuisineType(tag) {
       this.toggleTag(tag, this.selectedCuisineTypes);
@@ -85,8 +73,7 @@ export default {
         mealtime: this.selectedFoodTypes,
         pricing: this.selectedPricing,
         difficulty: this.selectedDifficulties,
-        cookingTime: this.selectedCookingTimes,
-        cuisineType: this.selectedCuisineTypes,
+        type_cuisine: this.selectedCuisineTypes,
       };
       this.$emit('update-filtered-recipes', filters);
     },

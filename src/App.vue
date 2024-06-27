@@ -1,18 +1,43 @@
-<script setup>
-import IngredientsPage from "./meal-master/meal-plan/pages/ingredients-page/ingredients-page.component.vue";
-import LoginPage from "./meal-master/auth/pages/login-page/login-page.component.vue";
-import Navbar from "./meal-master/shared/components/navbar.component.vue";
-import Toolbar from "./meal-master/public/components/toolbar/toolbar.component.vue";
-import RecipePage from "./meal-master/meal-plan/pages/recipes-page/recipe-page.vue";
-</script>
-
 <template>
-  <toolbar></toolbar>
-  <recipe-page></recipe-page>
+  <div id="app">
+    <toolbar></toolbar>
+    <main>
+
+      <router-view></router-view>
+    </main>
+    <footer>
+      <p>&copy; 2024 MealMaster. All rights reserved.</p>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
+<script setup>
+import Toolbar from '../src/meal-master/public/components/toolbar/toolbar.component.vue';
+</script>
 
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+footer {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
 </style>
-
-
