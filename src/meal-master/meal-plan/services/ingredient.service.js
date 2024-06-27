@@ -1,5 +1,5 @@
 // services/ingredient.service.js
-import Ingredient from '../models/ingredient.model';
+import Ingredient from '../models/ingredient.model.js';
 
 export default {
     async getIngredients() {
